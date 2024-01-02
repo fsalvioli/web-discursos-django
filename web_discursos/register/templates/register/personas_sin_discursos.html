@@ -1,0 +1,17 @@
+{% extends 'register/base.html' %}
+
+{% block title %}Sin Discurso | Caseros 1{% endblock %}
+
+{% block content %}
+    <h2 class="page-title">Personas sin Discursos en el año {{ year_actual }}</h2>
+    
+    {% if personas_sin_discursos %}
+        <ul class="person-list">
+            {% for persona in personas_sin_discursos %}
+                <li class="person-item">{{ persona.nombre_apellido }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p class="no-results">No hay personas sin discursos en el año {{ year_actual }}.</p>
+    {% endif %}
+{% endblock %}

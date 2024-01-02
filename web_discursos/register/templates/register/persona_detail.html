@@ -1,0 +1,32 @@
+{% extends 'register/base.html' %}
+
+{% block title %}Detalles de Persona: {{ persona.nombre_apellido }}{% endblock %}
+
+{% block content %}
+    <h2 class="page-title">Detalles de Persona</h2>
+
+    <div class="persona-details">
+        <p><strong>Nombre y Apellido:</strong> {{ persona.nombre_apellido }}</p>
+        <!-- Agrega otros campos relevantes aquí -->
+
+        <div class="actions">
+            <a href="{% url 'register:persona-update' persona.id %}" class="btn btn-warning">Editar</a>
+            <a href="{% url 'register:persona-delete' persona.id %}" class="btn btn-danger">Eliminar</a>
+            <a href="{% url 'register:persona-list' %}" class="btn btn-primary">Atrás</a>
+        </div>
+    </div>
+
+
+    <div class="historial-discursos">
+        <h3>Historial de Discursos</h3>
+        {% if discursos %}
+            <ul class="list-discursos">
+                {% for discurso in discursos %}
+                    <li>{{ discurso.fecha }} - {{ discurso.tema }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No hay discursos registrados para {{ persona.nombre_apellido }}.</p>
+        {% endif %}
+    </div>
+{% endblock %}

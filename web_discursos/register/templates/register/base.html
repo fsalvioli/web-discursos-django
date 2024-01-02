@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Registros | Caseros 1{% endblock %}</title>
+    <link href="{% static 'register/css/main.css' %}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-bar">
+            <h1>Registros</h1>
+            <nav>
+                <a href="{% url 'register:home' %}">Inicio</a>
+                <a href="{% url 'register:persona-list' %}">Lista de Personas</a>
+                <a href="{% url 'register:discurso-list' %}">Lista de Discursos</a>
+                <a href="{% url 'register:personas_sin_discursos' %}">Listado sin discursos</a>
+                <!-- Agrega más enlaces según sea necesario -->
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido de la página -->
+    <main class="main-content clearfix">
+        {% block content %}
+            <h2>App Web - Registro de Discuros</h2>
+            <h3>Registro de Miembros - Historial de Discursos</h3> 
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-content">
+        <p>&copy; 2023 Web-Caseros 1. Todos los derechos reservados.</p>
+        <!-- Otros elementos del footer -->
+    </footer>
+
+    <!-- Agrega tus scripts al final del cuerpo si es necesario -->
+
+</body>
+</html>

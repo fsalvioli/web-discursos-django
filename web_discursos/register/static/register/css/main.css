@@ -1,0 +1,323 @@
+/* Estilos generales */
+body {
+    font-family: Verdana;
+    margin: 2px;
+}
+.header {
+    background-color: #314c53;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    
+}
+.header h1 {
+    color: #f7f8fc;
+}
+.nav-bar{
+    display: grid;
+    align-items: center;
+    gap: 5px;
+}
+.nav-bar a {
+    text-decoration: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #fff; /* Añade un borde alrededor de cada enlace */
+    padding: 5px 10px;
+    background-color: #bbdec6;
+}
+.nav-bar a:hover{
+    background-color: #fff1c1; /* Cambia el color del botón cuando se pasa por encima */
+}
+.main-content{
+    text-align: center;
+    margin-top: 150px;
+}
+.page-title {
+    color: #333;
+}
+
+/* Estilos específicos para la página de detalles de discurso */
+.discurso-details {
+    margin-top: 20px;
+}
+
+.discurso-details p {
+    margin-bottom: 10px;
+}
+
+.actions {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #14888b;
+    border-radius: 5px;
+}
+
+.btn-warning {
+    background-color: #e68a2e;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-warning:hover{
+    background-color: #ff972c !important;
+}
+.btn-danger:hover{
+    background-color: #c90a00 !important;
+}
+.btn:hover{
+    box-shadow: inset 0 -2px 0 rgba(0,0,0,.2);
+    background-color: #314c53;
+}
+
+.footer-content {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: #5a7f78;
+    border-radius: 10px;
+    text-align: center;
+}
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Estilos para la tabla de personas */
+.persona-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.persona-table th,
+.persona-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.persona-table th {
+    background-color: #5a7f78;
+    color: #fff;
+}
+
+.persona-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+
+/* Estilos para la tabla de discursos */
+.discurso-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.discurso-table th,
+.discurso-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.discurso-table th {
+    background-color: #5a7f78;
+    color: #fff;
+}
+
+.discurso-table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+
+
+/* Estilos de paginación */
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.step-links {
+    display: inline-block;
+    padding: 10px;
+}
+
+.step-links a {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #5a7f78;
+    border: 1px solid #5a7f78;
+    border-radius: 3px;
+    margin: 0 5px;
+}
+
+.step-links span.current {
+    font-weight: bold;
+    padding: 5px 10px;
+    background-color: #5a7f78;
+    color: #fff;
+    border-radius: 3px;
+    margin: 0 5px;
+}
+
+/* busqueda en discursos */
+.busqueda form{
+    display: flex;
+}
+
+
+/* Personas sin discuros list */
+.person-list {
+    list-style-type: none;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    background-color: #14888b;
+    border-radius: 10px;
+}
+
+/* Agrega estilos para cada ítem de persona en la lista */
+.person-item {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Estilos para el formulario */
+.discurso-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para los campos del formulario */
+.discurso-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.discurso-form input,
+.discurso-form select {
+    width: 50%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+/* Agrega estilos para los campos del formulario cuando el mouse pasa sobre ellos */
+.discurso-form input:hover,
+.discurso-form select:hover {
+    background-color: #f0f0f0; /* Color de fondo al pasar el mouse */
+    transition: background-color 0.3s ease; /* Agrega una transición suave */
+}
+
+
+
+
+
+/* Estilos para el formulario persona */
+.persona-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos para los campos del formulario persona */
+.persona-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.persona-form input,
+.persona-form select {
+    width: 50%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+/* Agrega estilos para los campos del formulario cuando el mouse pasa sobre ellos  persona*/
+.persona-form input:hover,
+.persona-form select:hover {
+    background-color: #f0f0f0; /* Color de fondo al pasar el mouse */
+    transition: background-color 0.3s ease; /* Agrega una transición suave */
+}
+
+/* Estilos para el mensaje cuando no hay resultados */
+.no-results {
+    font-style: italic;
+    color: #888;
+}
+
+
+/* Estilos para la sección de historial de discursos */
+.historial-discursos {
+    margin-top: 20px;
+}
+
+h3 {
+    color: #333;
+}
+
+.list-discursos {
+    list-style: none;
+    padding: 0;
+}
+
+.list-discursos li {
+    margin-bottom: 8px;
+}
+
+/* Estilos para el mensaje cuando no hay discursos registrados */
+.list-discursos p {
+    margin: 0;
+    color: #777;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media query para pantallas pequeñas */
+@media screen and (max-width: 1024px) {
+    .header h1 {
+        justify-content: center;
+        display: none; /* Oculta el título del header */
+    }
+
+    .nav-bar a {
+        display: block;
+        width: 80%;
+        border-radius: 10px;
+        margin-top: 3px; /* Ajusta el margen según tu preferencia */
+    }
+
+    .nav-bar {
+        text-align: center; /* Centra los enlaces */
+    }
+}

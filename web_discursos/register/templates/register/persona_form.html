@@ -1,0 +1,17 @@
+{% extends 'register/base.html' %}
+
+{% block title %}{% if form.instance.id %}Editar Persona: {{ form.instance.nombre_apellido }}{% else %}Nueva Persona{% endif %}{% endblock %}
+
+{% block content %}
+    <h2 class="page-title">{% if form.instance.id %}Editar Persona{% else %}Nueva Persona{% endif %}</h2>
+
+    <form method="post" class="persona-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary">{% if form.instance.id %}Guardar Cambios{% else %}Crear Persona{% endif %}</button>
+        
+    </form>
+    <br>
+    <a href="{% url 'register:persona-list' %}" class="btn btn-warning">Atrás</a>
+{% endblock %}

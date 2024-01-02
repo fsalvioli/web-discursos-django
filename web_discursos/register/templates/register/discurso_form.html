@@ -1,0 +1,16 @@
+{% extends 'register/base.html' %}
+
+{% block title %}{% if form.instance.id %}Editar Discurso{% else %}Nuevo Discurso{% endif %}{% endblock %}
+
+{% block content %}
+    <h2 class="page-title">{% if form.instance.id %}Editar Discurso{% else %}Nuevo Discurso{% endif %}</h2>
+
+    <form method="post" class="discurso-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="btn btn-primary">{% if form.instance.id %}Guardar Cambios{% else %}Crear Discurso{% endif %}</button>
+    </form>
+    <br>
+    <a href="{% url 'register:persona-list' %}" class="btn btn-warning">Atrás</a>
+{% endblock %}

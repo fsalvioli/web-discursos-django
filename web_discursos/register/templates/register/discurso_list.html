@@ -1,0 +1,60 @@
+{% extends 'register/base.html' %}
+
+{% block title %}Discursos | Caseros 1{% endblock %}
+
+{% block content %}
+    <h2 class="page-title">Lista de Discursos</h2>
+    <a href="{% url 'register:discurso-create' %}" class="btn btn-primary">Agregar Discurso</a>
+
+    <div class="busqueda">
+        <form method="get" action="">
+            <!--<label for="busqueda">Buscar:</label>-->
+            <input type="text" name="q" id="q" value="{{ request.GET.q }}" placeholder="Buscar...">
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+    </div>
+    <table class="discurso-table">
+        <thead>
+            <tr>
+                <th class="column-header">Nombre y Apellido</th>
+                <th class="column-header">Fecha</th>
+                <th class="column-header">Tema</th>
+                <th class="column-header">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for discurso in object_list %}
+                <tr>
+                    <td class="data-cell">{{ discurso.persona.nombre_apellido }}</td>
+                    <td class="data-cell">{{ discurso.fecha }}</td>
+                    <td class="data-cell">{{ discurso.tema }}</td>
+                    <td class="action-cell">
+                        <a href="{% url 'register:discurso-detail' discurso.id %}" class="btn btn-secondary">Ver Detalles</a>
+                        <!--<a href="{% url 'register:discurso-update' discurso.id %}" class="btn btn-warning">Editar</a>
+                        <a href="{% url 'register:discurso-delete' discurso.id %}" class="btn btn-danger">Eliminar</a> -->
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Mostrar la paginación 
+    <div class="pagination">
+        <span class="step-links">
+            {% if discursos.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ discursos.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Página {{ discursos.number }} de {{ discursos.paginator.num_pages }}.
+            </span>
+
+            {% if discursos.has_next %}
+                <a href="?page={{ discursos.next_page_number }}">next</a>
+                <a href="?page={{ discursos.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div> -->
+    
+{% endblock %}

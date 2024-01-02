@@ -1,0 +1,20 @@
+{% extends 'register/base.html' %}
+    
+{% block title %}Detalles de Discurso: {{ discurso.persona.nombre_apellido }}{% endblock %}
+
+{% block content %}
+    <h2 class="page-title">Detalles de Discurso</h2>
+
+    <div class="discurso-details">
+        <p><strong>Nombre y Apellido:</strong> {{ discurso.persona.nombre_apellido }}</p>
+        <p><strong>Fecha:</strong> {{ discurso.fecha }}</p>
+        <p><strong>Tema:</strong> {{ discurso.tema }}</p>
+        <!-- Agrega otros campos relevantes aquí -->
+
+        <div class="actions">
+            <a href="{% url 'register:discurso-update' discurso.id %}" class="btn btn-warning">Editar</a>
+            <a href="{% url 'register:discurso-delete' discurso.id %}" class="btn btn-danger">Eliminar</a>
+            <a href="{% url 'register:discurso-list' %}" class="btn btn-primary">Atrás</a>
+        </div>
+    </div>
+{% endblock %}

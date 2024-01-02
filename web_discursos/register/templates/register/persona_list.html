@@ -1,0 +1,49 @@
+{% extends 'register/base.html' %}
+
+{% block title %}Personas | Caseros 1{% endblock %}
+
+{% block content %}
+    <h2 class="page-title">Lista de Personas</h2>
+    <a href="{% url 'register:persona-create' %}" class="btn btn-primary">Agregar Persona</a>
+
+    <table class="persona-table">
+        <thead>
+            <tr>
+                <th class="column-header">Nombre y Apellido</th>
+                <th class="column-header">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for persona in object_list %}
+                <tr>
+                    <td class="data-cell">{{ persona.nombre_apellido }}</td>
+                    <td class="action-cell">
+                        <a href="{% url 'register:persona-detail' persona.id %}" class="btn btn-secondary">Ver Detalles</a>
+                        <!--<a href="{% url 'register:persona-update' persona.id %}" class="btn btn-warning">Editar</a>
+                        <a href="{% url 'register:persona-delete' persona.id %}" class="btn btn-danger">Eliminar</a> -->
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Mostrar la paginación 
+    <div class="pagination">
+        <span class="step-links">
+          {% if personas.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ personas.previous_page_number }}">previous</a>
+          {% endif %}
+    
+          <span class="current">
+            Página {{ personas.number }} de {{ personas.paginator.num_pages }}.
+          </span>
+    
+          {% if personas.has_next %}
+            <a href="?page={{ personas.next_page_number }}">next</a>
+            <a href="?page={{ personas.paginator.num_pages }}">last &raquo;</a>
+          {% endif %}
+        </span>
+      </div> -->
+    
+{% endblock %}
